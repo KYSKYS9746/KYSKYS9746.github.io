@@ -1,0 +1,518 @@
+:root {
+    --primary-color: #FFC300;
+    --background-color: #F9F9F9;
+    --darkgray-color: #444444;
+    --lightgray-color: #DDDDDD;
+    --white-color: #FFFFFF;
+}
+
+.wrapper {
+    overflow: hidden;
+}
+
+.cursor {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    cursor: none;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    /* background: var(--lightgray-color); */
+    backdrop-filter: invert(80%);
+    transition: 0.1s;
+}
+
+.cursor img {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    transform: rotate(-135deg);
+    width: 5rem;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    color: #fff;
+    background: linear-gradient(-45deg, #1d2c41, #3a75a9, #184167, #22131a);
+    animation: backgroundChange 20s ease-in-out infinite;
+}
+
+.section {}
+
+.inner {
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.fp-overflow::-webkit-scrollbar {
+    display: none !important;
+}
+
+
+.title_wrap {
+    position: fixed;
+    top: 4rem;
+    left: 6rem;
+    z-index: 999;
+}
+
+.utils_wrap {
+    position: fixed;
+    top: 4rem;
+    right: 6rem;
+    z-index: 999;
+}
+
+.gnb {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+
+    width: 0;
+    height: 0;
+    background: var(--background-color);
+    overflow: hidden;
+
+    transition: 0.5s;
+}
+
+.gnb.on {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    line-height: 80px;
+}
+
+.mainVisal {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: #fff;
+
+    position: relative;
+    animation: backgroundChange 20s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+@keyframes backgroundChange {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+.mainVisal .path {
+    position: absolute;
+    bottom: -5rem;
+    right: 10rem;
+    width: 160rem;
+    height: 65rem;
+
+}
+
+.mainVisal .path svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.mainVisal .path path {
+    stroke: var(--primary-color);
+    stroke-dasharray: 5px 10px;
+    stroke-dashoffset: #333;
+}
+
+
+
+
+@keyframes nemo {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: -50rem;
+    }
+}
+
+/* .mainVisal .tit h2 {
+    position: relative;
+    display: inline-block;
+    font-size: 50px;
+    line-height: 55px;
+    font-weight: 800;
+    color: rgba(0, 0, 0, 0.7);
+    white-space: nowrap;
+    text-shadow: 3px 3px gray;
+}
+
+.mainVisal .tit h2::after {
+    content: "“톱니바퀴처럼 묵묵히 돌아가는 웹퍼블리셔”";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ffffff;
+    width: 0;
+    overflow: hidden;
+    border-right: 1px solid #fff;
+    animation: txt_ani 6s infinite;
+    animation-timing-function: steps(20, end);
+}
+
+@keyframes txt_ani {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 105%;
+    }
+} */
+
+
+
+
+
+.mainVisal .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainVisal .con {
+    position: relative;
+}
+
+.mainVisal .t {
+    position: absolute;
+    bottom: -20rem;
+    right: -10rem;
+    font-size: 4rem;
+    font-weight: 900;
+    z-index: 9999;
+}
+
+.mainVisal .con .p {
+    position: absolute;
+    left: -10000px;
+    width: 10rem;
+}
+
+.mainVisal .con .m {
+    animation: fly infinite;
+}
+
+.mainVisal .title {
+    display: flex;
+    align-items: center;
+}
+
+.mainVisal .tit h3 {
+    font-size: 10rem;
+    font-weight: 900;
+    margin: 0 0 3.2rem 0;
+    text-transform: uppercase;
+    text-shadow: 5px 5px gray;
+}
+
+.mainVisal .tit strong {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 3.2rem 0;
+    text-transform: uppercase;
+}
+
+@keyframes fly {
+    0% {
+        transform: scaleY(0.5);
+    }
+
+    50% {
+        transform: scaleY(1);
+    }
+
+    0% {
+        transform: scaleY(0.5);
+    }
+}
+
+
+.portfolio {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+
+.portfolio .title {
+    position: relative;
+}
+
+.portfolio .slide_wrap {
+    flex: 0 0 600%;
+    display: flex;
+}
+
+.portfolio .slide_wrap>* {
+    flex: 0 0 calc(100% / 6);
+}
+
+.portfolio .slide_wrap .con {
+    /* background: rgba(0, 0, 0, 0.9); */
+}
+
+.profile .ctxt {
+    position: absolute;
+    bottom: 10rem;
+    right: 0;
+    width: 80%;
+    height: 80%;
+    font-size: 4rem;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    animation: ctxt 25s linear infinite;
+}
+
+@keyframes ctxt {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* .portfolio .title {
+    display: flex;
+    align-items: center;
+}
+
+.portfolio .tit h3 {
+    font-size: 10rem;
+    font-weight: 900;
+    margin: 0 0 3.2rem 0;
+    text-transform: uppercase;
+}
+
+.portfolio .tit strong {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 3.2rem 0;
+    text-transform: uppercase;
+} */
+
+@keyframes bg {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes sg {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+
+
+
+.portfolio .con .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12rem;
+}
+
+.portfolio .con h3 {
+    margin: 0 0 1.6rem 0;
+    font-size: 8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-indent: -4px;
+}
+
+.portfolio .con p {
+    margin: 0 0 3.2rem 0;
+}
+
+.portfolio .con .table {
+    margin: 0 0 4rem 0;
+}
+
+.portfolio .con .link {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.portfolio .con .link a {
+    border-radius: 8px;
+    padding: 12px 32px;
+    background: var(--darkgray-color);
+    color: var(--white-color)
+}
+
+.portfolio .con .desc_table {
+    border-top: 2px solid var(--primary-color);
+    width: 100%;
+}
+
+.portfolio .con .desc_table th,
+.portfolio .con .desc_table td {
+    padding: 0 16px;
+    text-align: left;
+    font-weight: 400;
+    height: 4rem;
+    border-bottom: 1px solid var(--lightgray-color);
+}
+
+.portfolio .tit h2 {
+    margin: 0 0 1.6rem 0;
+    font-size: 10rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-indent: -4px;
+}
+
+.portfolio .tit p {
+    margin: 0 0 1.6rem 0;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+}
+
+.portfolio .slide {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio .slide .path {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.portfolio .slide .path path {
+    stroke: var(--primary-color);
+    stroke-dasharray: 5px 10px;
+    /* stroke-dashoffset: #333; */
+}
+
+.portfolio .slide .p {
+    position: absolute;
+    left: -10000px;
+    width: 10rem;
+}
+
+.portfolio .slide .m {
+    animation: fly2 infinite;
+}
+
+@keyframes fly2 {
+    0% {
+        transform: scaleY(0.5);
+    }
+
+    50% {
+        transform: scaleY(1);
+    }
+
+    0% {
+        transform: scaleY(0.5);
+    }
+}
+
+.portfolio .mokup {
+    position: relative;
+    flex: 0 0 30rem;
+    height: 62.5rem;
+    cursor: n-resize;
+}
+
+.portfolio .mokup>* {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+}
+
+.portfolio .mokup .line {
+
+    z-index: 999;
+}
+
+.portfolio .mokup .pof {
+    border-radius: 4.5rem;
+    border: 1rem solid transparent;
+    box-shadow: 2rem 2rem 16px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio .mokup .line+.pof img {
+    transition: transform 3s;
+}
+
+.portfolio .mokup .line:hover+.pof img {
+    transform: translate(0, calc(-100% + 62rem));
+}
+
+
+.profile {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+.profile .tit h3 {
+    font-size: 10rem;
+    font-weight: 900;
+    margin: 0 0 3.2rem 0;
+    text-transform: uppercase;
+}
+
+
+
+
+
+.totop {
+    position: fixed;
+    bottom: 10rem;
+    right: 6rem;
+    z-index: 999;
+}
